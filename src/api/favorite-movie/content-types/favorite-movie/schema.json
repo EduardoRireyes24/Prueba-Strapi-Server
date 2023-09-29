@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "favorite_movies",
+  "info": {
+    "singularName": "favorite-movie",
+    "pluralName": "favorite-movies",
+    "displayName": "Favorite Movie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "year": {
+      "type": "integer",
+      "max": 3000,
+      "min": 1900,
+      "required": true
+    },
+    "hasTrilogy": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
